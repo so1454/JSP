@@ -28,17 +28,13 @@ public class ex00CreateServlet extends HttpServlet {
 	// 없어도 상관은 없는데, 0.00001% 확률로 안될때가 있음 그니까 그냥 두자!
 	private static final long serialVersionUID = 1L;
        
+	
 	// 3. 생성자 : 객체 생성하는 순간에 호출되는 메소드
     // 한번만 호출됨
     public ex00CreateServlet() {
         super();		// --> 부모클래스의 생성자 호출
         System.out.println("생성자 호출!");
     }
-    
-    
-    
-    
-    
     
     
     
@@ -79,9 +75,6 @@ public class ex00CreateServlet extends HttpServlet {
 	
 	
 	
-	
-	
-
 	
 	// 7. goGet, doPost
 	// -- > Client로 부터 요청을 받는 방식은 여러개!

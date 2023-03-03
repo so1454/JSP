@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<!-- HTML에서 Servlet으로 데이터 전송하기
+		: form 태그 사용해서 전송!
+		데이터 전송(ex.카톡전송이라고 생각해보면) 3가지 조건!
+		1) 어디로 보낼건지 :  form태그 action(속성)에 기술
+			(Servlet으로 데이터를 전송한다면, url mapping 값만 확인)
+		2) 무엇을 보낼건지 : input태그 name 속성을 추가
+				(Servlet쪽에서 찾을 수 있도록 이름표를 부착!
+				(뭉텅이로 보내면 뭐가 무슨 데이터인지 모르겠지 그니까 name을 달아주는거임)
+		3) 어떤 시점(언제)에 보낼건지 : submit 버튼을 클릭했을때
+	 -->
+	<form action ="DataSend">  <!--/까지 가져오면 루트로 나간다는의미가 되어버리니까 가져오지말기 -->
+	
+		DATA : <input type = "text" name = "data">  <!--inline이라서 한줄을 다 차지함 개행필요 -->
+		<br>	
+		<input type = "submit">
+		
+	
+	</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
