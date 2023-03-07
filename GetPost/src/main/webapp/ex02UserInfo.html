@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	
+	<form action="UserInfo" method = "post">
+	
+		<h3>직업</h3>
+		<select name="job">
+			<option name = "student">학생</option>
+			<option name = "teacher">선생님</option>
+		</select>
+
+		<h3>성별</h3>
+		<input type="radio" name ="gender" value = "남자"> 남자  
+						<!-- value값이 서블릿에서 출력됨 -->
+		<input type="radio" name ="gender" value = "여자"> 여자
+
+		<h3>취미</h3>
+		<!--checkbox를 사용할때는 카테고리가 동일할 때, name값을 동일한 값으로 준다 -->
+		<input type="checkbox" value = "축구" name="sports">축구
+		<input type="checkbox" value = "야구" name="sports">야구
+		<input type="checkbox" value = "농구" name="sports">농구
+		<br><br>
+		
+		<input type="submit" value="제출">
+
+
+
+	</form>
+
+
+
+
+
+
+
+</body>
+</html>
