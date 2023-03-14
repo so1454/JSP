@@ -15,11 +15,13 @@ public class ex02UserInfo extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		
+		
 		request.setCharacterEncoding("UTF-8");
 
 		String job = request.getParameter("job");
 		String gender = request.getParameter("gender");
+		
 		
 		// 하나의 name값에 요청받은 값이 여러개일때 꺼내오는 방법
 		// --> request.getParameterValues("name값")

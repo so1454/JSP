@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Xml 파일이란? : 데이터를 저장할 수 있는 확장자
+	Extensible markup laguage의 약자
+	Extensible (다른 사람들이 만들어놓은 데이터들의 묶음들을 의미
+	** xml 파일을 사용할때 첫번째로 해아하는 것 !*
+	 : 이 안에서 어떤 의미를 가지고 있는 확장 markup language를 사용할 건지
+	 정해줘야한다!!!!! >> schema라고 부름!
+	-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.smhrd</groupId>
+	<artifactId>MavenSample</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>MavenSample Maven Webapp</name>
+	<!-- FIXME change it to the project's website -->
+	<url>http://www.example.com</url>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
+	</properties>
+	<!--웹 프로젝트에 필요한 라이브러리들을 기술하는 태그!
+ 아래 전부 복수로 들어감 -es 라이브러리가 여러개 들어가니까 무조건 복수로 시작한다고! 
+ 여기 안에 dependency 태그를 아래 위로 넣고 그 안에 내가 필요한 라이브러리를 넣어주면 자동 다운로드되는거임-->
+	<dependencies>
+		
+		<!--라이브러리 한 개에 대한 정보(이 밑은 junint에 대한 정보가 나와있는 것임)-->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc6 -->
+		<dependency>
+			<groupId>com.oracle.database.jdbc</groupId>
+			<artifactId>ojdbc6</artifactId>
+			<version>11.2.0.4</version>
+		</dependency>
+		
+	</dependencies>
+	
+	<build>
+		<finalName>MavenSample</finalName>
+		<pluginManagement>
+			<!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+			<plugins>
+				<plugin>
+					<artifactId>maven-clean-plugin</artifactId>
+					<version>3.1.0</version>
+				</plugin>
+				<!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging -->
+				<plugin>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>3.0.2</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.8.0</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.22.1</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>3.2.2</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-install-plugin</artifactId>
+					<version>2.5.2</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-deploy-plugin</artifactId>
+					<version>2.8.2</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+</project>

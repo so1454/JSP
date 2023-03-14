@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="java.lang.Process"/>
+    <fullyQualifiedTypeName name="org.apache.jasper.tagplugins.jstl.core.Out"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.Cookie"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
+    <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
     <fullyQualifiedTypeName name="java.io.PrintWriter"/>
+    <fullyQualifiedTypeName name="javax.print.attribute.standard.Media"/>
+    <fullyQualifiedTypeName name="com.smhrd.model.MemberDTO"/>
+    <fullyQualifiedTypeName name="com.smhrd.model.MemberDAO"/>
 </qualifiedTypeNameHistroy>
