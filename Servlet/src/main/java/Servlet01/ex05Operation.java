@@ -50,10 +50,10 @@ public class ex05Operation extends HttpServlet {
 		}
 		
 		
-		out.print(num1 + op + num2 + "=" + result);
 		
 		// 6. 결과 출력하기
 		
+		out.print(num1 + op + num2 + "=" + result);
 		
 		
 		

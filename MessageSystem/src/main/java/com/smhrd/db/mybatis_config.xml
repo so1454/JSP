@@ -25,16 +25,20 @@
 				!!!!Connection Pool!!!!
 			-->
 			<dataSource type="POOLED">
-				<property name="driver" value="${driver}" />
-				<property name="url" value="${url}" />
-				<property name="username" value="${username}" />
-				<property name="password" value="${password}" />
+			<!-- 6) Connection객체를 생성할떄 필요한 내용들을 정리하는 구간
+						- driver,url, 계정정보(username,password) -->
+				<property name="driver" value="oracle.jdbc.driver.OracleDriver" />
+				<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
+				<property name="username" value="hr" />
+				<property name="password" value="hr" />
 			</dataSource>
 		</environment>
 	</environments>
 	
+	<!-- 7) SQL구문을 가지고 있는 mapper 파일들 중 어떤 걸 사용할 건지 정의하는 구간 -->
 	<mappers>
-		<mapper resource="org/mybatis/example/BlogMapper.xml" />
+	<!-- 8) 한개의 mapper 파일의 경로 -->
+		<mapper resource="com/smhrd/db/memberMapper.xml" />
 	</mappers>
 </configuration>
 

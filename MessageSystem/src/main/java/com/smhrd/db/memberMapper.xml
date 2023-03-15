@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <!-- 1) mapper 태그 안쪽에 SQL 쿼리문들 작성 -->
+  <!-- namespace : 식별자(중복되지 않게만 작성) -->
+  
+<mapper namespace="com.smhrd.model.MemberDAO">
+	
+  	<!-- id는 식별자 값(고유값,중복X) -->
+	<insert id="join" parameterType = "com.smhrd.model.MemberDTO" > 
+					<!-- 파라미터 타입은 정확하게 짚어서 가져오기!(오타가 많이나니까 자동입력하기)
+						mybatis 자동입력(ctrl+space) 확장자를 설치해줌 -->  
+	insert into web_member 
+	values(#{email},#{pw},#{tel},#{address})
+	<!-- email/pw/tell/address dto에서 이름 지정해준 그대로 가져오기
+		** 세미콜론 금지 / {} 내에서 띄어쓰기 금지-->
+	<!-- get -->
+	
+	</insert>
+	
+</mapper>
+
+
+
