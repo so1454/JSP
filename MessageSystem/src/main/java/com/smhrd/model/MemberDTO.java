@@ -27,6 +27,7 @@ public class MemberDTO {
 		this.address = address;
 	}
 	
+	
 	// 생성자 메소드
 	public MemberDTO() {
 	}

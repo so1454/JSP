@@ -2,23 +2,44 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  <!-- 1) mapper 태그 안쪽에 SQL 쿼리문들 작성 -->
-  <!-- namespace : 식별자(중복되지 않게만 작성) -->
-  
+<!-- 1) mapper 태그 안쪽에 SQL 쿼리문들 작성 -->
+<!-- namespace : 식별자(중복되지 않게만 작성) -->
+
 <mapper namespace="com.smhrd.model.MemberDAO">
-	
-  	<!-- id는 식별자 값(고유값,중복X) -->
-	<insert id="join" parameterType = "com.smhrd.model.MemberDTO" > 
-					<!-- 파라미터 타입은 정확하게 짚어서 가져오기!(오타가 많이나니까 자동입력하기)
-						mybatis 자동입력(ctrl+space) 확장자를 설치해줌 -->  
-	insert into web_member 
-	values(#{email},#{pw},#{tel},#{address})
-	<!-- email/pw/tell/address dto에서 이름 지정해준 그대로 가져오기
-		** 세미콜론 금지 / {} 내에서 띄어쓰기 금지-->
-	<!-- get -->
-	
+
+	<!-- id는 식별자 값(고유값,중복X) -->
+	<insert id="join" parameterType="com.smhrd.model.MemberDTO">
+		<!-- 파라미터 타입은 정확하게 짚어서 가져오기!(오타가 많이나니까 자동입력하기) mybatis 자동입력(ctrl+space) 
+			확장자를 설치해줌 -->
+		insert into web_member
+		values(#{email},#{pw},#{tel},#{address})
+		<!-- email/pw/tell/address dto에서 이름 지정해준 그대로 가져오기 ** 세미콜론 금지 / {} 내에서 띄어쓰기 
+			금지 -->
 	</insert>
-	
+
+	<!-- parameterType은 항상 정해주기! id : 쿼리 문을 구분할 수 있는 식별자(메소드 명과 동일하게 사용) parameterType 
+		: DAO에서부터 받아오는 매개변수의 자료형 지정 (풀네임을 작성해야함! >> package명까지) resultType : SQL구문을 
+		실행하고 나서 결과값을 java내부에서 어떤 자료형으로 받아올껀지 지정 (풀네임을 작성해야함) ** select 구문 작성할 때 꼭 
+		써주기!!(여러개를 받아와야하니까(이멜, pw...) insert delete update는 그냥 0행 요런식으로 숫자인데! -->
+
+	<select id="login" parameterType="com.smhrd.model.MemberDTO"
+		resultType="com.smhrd.model.MemberDTO">
+		select * from web_member
+		where email = #{email} and pw = #{pw}
+	</select>
+	<!-- #{} 은 get해오겠다는 뜻 -->
+
+
+
+	<update id="update" parameterType="com.smhrd.model.MemberDTO">
+		update web_member
+			set pw = #{pw},
+			tel = #{tel},
+			address = #{address}
+			where email = #{email}
+	</update>
+
+
 </mapper>
 
 

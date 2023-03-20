@@ -35,6 +35,8 @@
 												// 조인서비스가 set으로 들어갔으니까 request.setAttribute("email", email);
 									%>
 							<li>메세지시스템의 새로운 이메일은 <%= email %>입니다.</li>
+							<li>메세지시스템의 새로운 이메일은 ${email}입니다.</li>
+							<!-- el표현식을 사용하면 scope에 직접적으로 접근 가능! -->
 							<li><button onclick='location.href="main.jsp"'>시작하기</button></li>
 						</ul>
 					</nav>			
