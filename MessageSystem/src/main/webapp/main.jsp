@@ -21,12 +21,23 @@
 							<!-- 로그인 후 Logout.jsp로 이동할 수 있는'로그아웃'링크와 '개인정보수정'링크를 출력하시오. -->
 						
 						<!-- jstl을 이용해서 IF문 적용해보기(개쉽잖아!) -->
+							<!-- 어떤 값을 가지고 있지 않을때 -->
 							<c:if test="${empty user}">
 								<a href="#menu">로그인</a>
 							</c:if>
 							
+							<!-- 어떤 값을 가지고 있을때 -->
 							<c:if test = "${!empty user}">
-								<a href="update.jsp">개인정보수정 </a>
+							
+							<!-- 로그인된 회원이 관리자인지 일반 회원인지에 따라 메뉴 수정하기 -->
+								<c:if test = "${user.email eq 'admin'}" >
+									<a href ="SelectAllProgram">회원정보관리</a>
+								</c:if>
+								<!-- ne -> not equal -> '!=' 같은 의미 -->
+								<c:if test = "${user.email ne 'admin'}">
+									<a href="update.jsp">개인정보수정 </a>
+								</c:if>
+								
 								
 								<!-- 로그아웃 서비스라는 서블릿 이동 -->
 								<a href="LogoutService">로그아웃 </a> 
