@@ -29,4 +29,6 @@
     <fullyQualifiedTypeName name="user.userdao"/>
     <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSessionFactory"/>
     <fullyQualifiedTypeName name="java.io.PrintWriter"/>
+    <fullyQualifiedTypeName name="org.w3c.dom.Text"/>
+    <fullyQualifiedTypeName name="java.lang.module.Configuration"/>
 </qualifiedTypeNameHistroy>
